@@ -1,3 +1,4 @@
+(* Open Window to Select a Text File *)
 set theFile to (choose file with prompt "Select a file to read:")
 open for access theFile
 set fileContents to (read theFile)
@@ -7,7 +8,11 @@ set Wordlist to words of fileContents
 
 tell application "Messages"
 	set myid to get id of first service
-	set theBuddy to buddy "+13176543685" of service id myid
+	
+	(* Edit iMessage Address of Recipient *)
+	set theBuddy to buddy "ADDRESS_HERE" of service id myid
+	
+	(* Send Each Word as a Message *)
 	repeat with aword in Wordlist
 		send aword to theBuddy
 		delay 0.5
