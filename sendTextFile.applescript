@@ -9,7 +9,7 @@ set Wordlist to words of fileContents
 tell application "Messages"
 	set myid to get id of first service
 	
-	(* Edit iMessage Address of Recipient *)
+	(* Enter Phone Number or Email of Recipient *)
 	set theBuddy to buddy "ADDRESS_HERE" of service id myid
 	
 	(* Send Each Word as a Message *)
